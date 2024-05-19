@@ -1,0 +1,67 @@
+[
+    {
+      "httpRequest": {
+        "path": "/information"
+      },
+      "httpResponse": {
+        "body": "{\"name\":\"javaSpring\",\"details\":[\"java\",\"spring\"]}"
+      }
+    },
+    {
+      "httpRequest": {
+        "method": "POST",
+        "path": "/game"
+      },
+      "httpResponse": {
+        "statusCode" : 200
+      }
+    },
+    {
+      "httpRequest": {
+        "method": "GET",
+        "path": "/game/{gameId}",
+        "pathParameters": {
+          "gameId": ["[A-Z0-9a-z]+"]
+        }
+      },
+      "httpResponse": {
+        "body": "\"RUNNING\""
+      }
+    },
+    {
+      "httpRequest": {
+        "method": "GET",
+        "path": "/game/{gameId}/shot",
+        "pathParameters": {
+          "gameId": ["[A-Z0-9a-z]+"]
+        }
+      },
+      "httpResponse": {
+        "body": "[{\"x\":5,\"y\":5,\"hit\":false},{\"x\":6,\"y\":6,\"hit\":true}]"
+      }
+    },
+    {
+      "httpRequest": {
+        "method": "POST",
+        "path": "/game/.*/shot"
+      },
+      "httpResponse": {
+        "statusCode" : 200,
+        "body" : "HIT"
+      },
+      "times" : {
+        "remainingTimes" : 10,
+        "unlimited" : false
+      }
+    },
+    {
+      "httpRequest": {
+        "method": "POST",
+        "path": "/game/.*/shot"
+      },
+      "httpResponse": {
+        "statusCode" : 200,
+        "body" : "MISSED"
+      }
+    }
+  ]
