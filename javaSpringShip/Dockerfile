@@ -12,7 +12,7 @@ RUN base64 -d /usr/src/app/conf/settings.xml.base64 > /usr/src/app/conf/settings
     mvn -s /usr/src/app/conf/settings.xml -f /usr/src/app/pom.xml clean package
 
 
-# -----------------------------
+# --------------------------
 
 
 FROM openjdk:11
